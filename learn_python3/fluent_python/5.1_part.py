@@ -21,7 +21,7 @@ class BingoCage:
 
 
 if __name__ == "__main__":
-    bingo = BingoCage(range(3))
+    bingo = BingoCage(range(10))
     print(bingo())
     print(bingo())
     print(bingo())
