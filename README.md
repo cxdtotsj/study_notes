@@ -20,3 +20,13 @@
 
 
 # JavaScript
+
+
+# linux配置代理
+1. 主机使用SSR，开始局域网代理，配置端口
+2. linux网络配置代理，地址为 主机IP地址，端口为 SSR端口
+3. 在 `.bashrc`、 `/etc/profile` 中配置代理设置 
+
+`export http_proxy=host:prot` 
+
+`export https_proxy=host:prot`
