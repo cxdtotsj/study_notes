@@ -1,0 +1,37 @@
+version: "3"
+services:
+
+  # yapi:
+  #   image: registry.cn-hangzhou.aliyuncs.com/anoy/yapi
+  #   container_name: yapi
+  #   depends_on:
+  #     - yapi-init
+  #   links:
+  #     - yapi-mongo
+  #   working_dir: "/api/vendors"
+  #   ports:
+  #     - "3000:3000"
+  #   command:
+  #     - server/app.js
+
+  yapi-init:
+    image: registry.cn-hangzhou.aliyuncs.com/anoy/yapi
+    links:
+      - yapi-mongo
+    working_dir: "/api/vendors"
+    entrypoint: npm run install-server
+    networks:
+      - yapi
+  
+  yapi-mongo:
+    image: mongo
+    volumes:
+      - "mongo_data_yapi:/data/db"
+    networks:
+      - yapi
+
+volumes:
+  mongo_data_yapi:
+
+networks:
+  yapi:

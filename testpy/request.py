@@ -8,8 +8,6 @@ import json
 # res = requests.post(url,data).json()
 # print(res)
 
-r = requests.get('https://api.github.com/events')
-print(r.content)
-
-dict_json = json.loads(r.content)
-print(dict_json)
+r = requests.get('https://www.baidu.com')
+r.encoding = r.apparent_encoding
+print(r.text)
